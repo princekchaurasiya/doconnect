@@ -1020,7 +1020,7 @@ section {
 }
 
 .services .service-item:hover .icon:before {
-  background: #00b6a1;
+  background: #c96464;
 }
 
 .services .service-item:hover h3 {
@@ -2719,7 +2719,7 @@ section {
   font-size: 0.8rem;
 }
 .service-para-icon{
-  color: #059652;
+  color: #6b1414;
 }
 
 /* Keyframe Animation for Radial Gradient Background */
@@ -2765,4 +2765,62 @@ section {
   .logo-heading {
     font-size: 20px !important; /* Font size for screens 768px and smaller */
   }
+}
+
+
+
+.stickyphone {
+	position: fixed;
+	color: #ffffff !important;
+	padding: 0px;
+	width: 50px;
+	height: 50px;
+	bottom: 10px;
+	left: 10px;
+	border-radius: 50px;
+	/*
+  z-index:4;
+  */
+	text-align: center;
+
+	background-color: #1acc8d;
+	background-size: 400% 400%;
+	-webkit-animation: movgrad 2s ease infinite;
+	animation: movgrad 2s ease infinite;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.stickyphone>span {
+	font-size: 1.5rem;
+	color: #ffffff;
+}
+
+.stickyphone:hover {
+	text-decoration: none;
+}
+
+.stickywa {
+
+
+	position: fixed;
+	color: #ffffff !important;
+	padding: 0px;
+	width: 50px;
+	height: 50px;
+	bottom: 10px;
+	right: 10px;
+
+
+	/*
+  z-index:4;
+  */
+	text-align: center;
+}
+
+
+.stickywa:hover {
+	text-decoration: none;
 }
