@@ -773,7 +773,7 @@
       <div class="fixed-bottom d-md-block d-lg-none">
          <div id="stickymob">
             <div class="row stickybtn">
-               <a class="stickywa" href="whatsapp://send?text=Hello Doctor, I want to schedule a home visit&phone=+918424845423">
+               <a class="stickywa" href="whatsapp://send?text=Hello Doctor,I was going through your website and  I want to schedule a home visit&phone=+918424845423">
                <img class="img-fluid" src="assets/img/wa-logo.png" height="45" width="45" alt="Doctor On Call For Home Visit">
                </a>
             </div>
