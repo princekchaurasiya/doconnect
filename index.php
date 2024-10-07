@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
+
+   <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WDB2N5RB');</script>
+<!-- End Google Tag Manager -->
       <meta charset="utf-8">
       <meta content="width=device-width, initial-scale=1.0" name="viewport">
       <title>Doconnect | Doctor Home Visit at  your home</title>
@@ -23,6 +31,11 @@
       <link href="assets/css/main.css" rel="stylesheet">
    </head>
    <body>
+
+   <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDB2N5RB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
       <!-- ======= Header ======= -->
       <header id="header" class="header d-flex align-items-center">
          <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
@@ -773,7 +786,7 @@
       <div class="fixed-bottom d-md-block d-lg-none">
          <div id="stickymob">
             <div class="row stickybtn">
-               <a class="stickywa" href="whatsapp://send?text=Hello Doctor,I was going through your website and  I want to schedule a home visit&phone=+918424845423">
+               <a class="stickywa" href="whatsapp://send?text=Hello Doctor, #I was going through your website and  I want to schedule a home visit&phone=+918424845423">
                <img class="img-fluid" src="assets/img/wa-logo.png" height="45" width="45" alt="Doctor On Call For Home Visit">
                </a>
             </div>
