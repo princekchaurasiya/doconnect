@@ -1,7 +1,0 @@
-[20-Feb-2025 19:21:01 Europe/Berlin] Test log entry: 2025-02-20 19:21:01 - Logging test from log_test.php
-[20-Feb-2025 20:28:36 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'smbrckdy_doconnect'@'localhost' (using password: YES) in C:\xampp\htdocs\docconnect\db-connect.php:19
-Stack trace:
-#0 C:\xampp\htdocs\docconnect\db-connect.php(19): mysqli->__construct('localhost', 'smbrckdy_doconn...', Object(SensitiveParameterValue), 'smbrckdy_doconn...')
-#1 C:\xampp\htdocs\docconnect\blog-post.php(2): include('C:\\xampp\\htdocs...')
-#2 {main}
-  thrown in C:\xampp\htdocs\docconnect\db-connect.php on line 19
