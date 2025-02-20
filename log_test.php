@@ -1,18 +1,19 @@
 <?php
-// Check if the script is running on localhost
-if ($_SERVER['SERVER_NAME'] == 'localhost') {
-    // Localhost settings
+// Detect if running on localhost or live server
+$is_local = in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1']);
+
+// Set log file path based on environment
+if ($is_local) {
     ini_set('log_errors', 1);
-    ini_set('error_log', __DIR__ . '/logs.txt'); // Save log in the project directory
+    ini_set('error_log', __DIR__ . '/logs.txt'); // Local log file
 } else {
-    // Live server settings
     ini_set('log_errors', 1);
-    ini_set('error_log', '/home/smbrckdy/doconnect.org/logs.txt'); // Use full server path
+    ini_set('error_log', '/home/smbrckdy/doconnect.org/logs.txt'); // Live server log file
 }
 
-// Test log entry
+// Log a test entry
 error_log("Test log entry: " . date("Y-m-d H:i:s") . " - Logging test from log_test.php");
 
-// Output to confirm execution
+// Output success message
 echo "Log test completed!";
 ?>
