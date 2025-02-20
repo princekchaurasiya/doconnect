@@ -54,6 +54,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <li><a href="#team">Team</a></li>
                   <li><a href="#faqs">FAQs</a></li>
                   <li><a href="#contact">Contact</a></li>
+                  <li><a href="blog.php">Blogs</a></li>
                   <li><a href="tel:+918424845423" class="mobile-number">+91 84248 45423</a></li>
                </ul>
             </nav>

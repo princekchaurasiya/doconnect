@@ -74,6 +74,7 @@ $meta_keywords = isset($meta_keywords) ? $meta_keywords : "doctor home visit, ho
                   <li><a href="team.php">Team</a></li>
                   <li><a href="faqs.php">FAQs</a></li>
                   <li><a href="contact.php">Contact</a></li>
+                  <li><a href="blog.php">Blogs</a></li>
                   <li><a href="tel:+918424845423" class="mobile-number">+91 84248 45423</a></li>
                </ul>
             </nav>
