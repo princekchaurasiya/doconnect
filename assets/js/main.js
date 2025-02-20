@@ -290,3 +290,49 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+// Other existing JavaScript code...
+
+window.onload = function () {
+  console.log("Page loaded. Now monitoring internet status.");
+  
+  function checkInternet() {
+      console.log("Checking internet connection...");
+  
+      if (!navigator.onLine) {
+          console.log("Internet disconnected! Trying offline.php...");
+          
+          // First try offline.php
+          fetch("offline.php")
+              .then(response => {
+                  if (!response.ok) {
+                      throw new Error("offline.php failed"); // If PHP fails, go to HTML
+                  }
+                  console.log("Redirecting to offline.php...");
+                  window.location.href = "offline.php";
+              })
+              .catch((error) => {
+                  console.error("Error loading offline.php:", error);
+                  console.log("Redirecting to offline.html as fallback...");
+                  window.location.href = "offline.html"; // Fallback to static HTML
+              });
+      }
+  }
+
+  // Check when internet disconnects
+  window.addEventListener("offline", checkInternet);
+
+  // Also check if the user was already offline when they landed on the page
+  if (!navigator.onLine) {
+      checkInternet();
+  }
+};
+
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js").then(function () {
+      console.log("Service Worker registered successfully.");
+  }).catch(function (error) {
+      console.error("Service Worker registration failed:", error);
+  });
+}

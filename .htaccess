@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# Redirect "blog/slug" to "blog-post.php?slug=slug"
+RewriteRule ^blog/([^/]+)/?$ blog-post.php?slug=$1 [L,QSA]
+
+# Custom 404 Error Page
+ErrorDocument 404 /docconnect/404.php
+
+# Redirect all non-existent files & directories to 404.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /docconnect/404.php [L]
