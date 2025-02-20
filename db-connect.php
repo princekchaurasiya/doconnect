@@ -8,9 +8,12 @@ require_once __DIR__ . '/log_errors.php'; // Use require_once to prevent redecla
 
 // Database credentials
 $servername = "localhost";
-$username = "root";
-$password = "";
-$database = "doconnect";
+// $username = "root";
+$username = "smbrckdy_doconnect";
+// $password = "";
+$password = "Prince@6590";
+// $database = "doconnect";
+$database = "smbrckdy_doconnect";
 
 // Establish database connection
 $conn = new mysqli($servername, $username, $password, $database);
