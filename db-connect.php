@@ -6,11 +6,20 @@ ini_set('display_startup_errors', 1);
 ini_set('log_errors', 1);
 ini_set('error_log', __DIR__ . '/logs.txt'); // Log PHP errors to logs.txt
 
-// Database credentials
-$servername = "localhost";
-$username = "smbrckdy_doconnect";
-$password = "Prince@6590";
-$database = "smbrckdy_doconnect";
+// Detect environment
+if ($_SERVER['SERVER_NAME'] === 'localhost') {
+    // Localhost database credentials
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "doconnect";
+} else {
+    // Production database credentials
+    $servername = "localhost";  // Change if your production DB is on another server
+    $username = "smbrckdy_doconnect";
+    $password = "Prince@6590";
+    $database = "smbrckdy_doconnect";
+}
 
 // Establish database connection
 $conn = new mysqli($servername, $username, $password, $database);
@@ -23,4 +32,5 @@ if ($conn->connect_error) {
 
 // If connected successfully, log it
 error_log("Database Connected Successfully: " . date("Y-m-d H:i:s"));
+
 ?>
