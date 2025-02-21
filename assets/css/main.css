@@ -3064,7 +3064,3 @@ section {
   padding: 1rem;
   border-radius: 10px;
 }
-.markdown.prose p:first-child {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
