@@ -1,20 +1,30 @@
 <?php
-// Enable error reporting and logging
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-ini_set('log_errors', 1);
-ini_set('error_log', __DIR__ . '/logs.txt'); // Log PHP errors to logs.txt
-
 // Detect environment
-if ($_SERVER['SERVER_NAME'] === 'localhost') {
-    // Localhost database credentials
+$is_local = ($_SERVER['SERVER_NAME'] === 'localhost');
+date_default_timezone_set('Asia/Kolkata'); // ✅ Set correct timezone
+
+if ($is_local) {
+    // Enable error reporting for local development
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+} else {
+    // Disable public error display in production
+    error_reporting(0);
+    ini_set('display_errors', 0);
+}
+
+// Always log errors (both local & production)
+ini_set('log_errors', 1);
+ini_set('error_log', __DIR__ . '/logs.txt'); // Log errors to logs.txt
+
+// Database credentials
+if ($is_local) {
     $servername = "localhost";
     $username = "root";
     $password = "";
     $database = "doconnect";
 } else {
-    // Production database credentials
     $servername = "localhost";  // Change if your production DB is on another server
     $username = "smbrckdy_doconnect";
     $password = "Prince@6590";
@@ -27,10 +37,11 @@ $conn = new mysqli($servername, $username, $password, $database);
 // Check connection and log errors if any
 if ($conn->connect_error) {
     error_log("Database Connection Failed: " . $conn->connect_error);
-    die("Database connection failed.");
+    die("Database connection failed."); // Don't expose error details
 }
 
-// If connected successfully, log it
-error_log("Database Connected Successfully: " . date("Y-m-d H:i:s"));
-
+// Log successful connection (for debugging)
+if ($is_local) {
+    error_log("Database Connected Successfully: " . date("Y-m-d H:i:s"));
+}
 ?>
