@@ -1,0 +1,26 @@
+RewriteEngine On
+RewriteBase /doconnect/
+
+# Redirect "blog/slug" to "blog-post.php?slug=slug"
+RewriteRule ^blog/([^/]+)/?$ blog-post.php?slug=$1 [L,QSA]
+
+# Handle Dynamic Location Pages (Redirect "andheri.php" to "location.php?slug=andheri")
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9-]+)\.php$ location.php?slug=$1 [L,QSA]
+
+# Custom 404 Error Page (Should Only Trigger if Nothing Else Matches)
+ErrorDocument 404 /doconnect/404.php
+
+# Prevent Search Engines from Indexing Sensitive Files
+<FilesMatch "^(admin\.php|manage-categories\.php|add-post\.php|edit-post\.php|admin-middleware\.php|create-admin\.php|db-connect\.php|generate-slugs\.php|log_test\.php|login\.php|logout\.php|offline\.php|test-db\.php)$">
+    Header set X-Robots-Tag "noindex, nofollow"
+</FilesMatch>
+
+# Block Direct Access to Critical Backend Files
+<FilesMatch "^(db-connect\.php|admin-middleware\.php|generate-slugs\.php|log_test\.php|test-db\.php|manage-categories\.php|create-admin\.php)$">
+    Require all denied
+</FilesMatch>
+
+# Disable Directory Listing for Security
+Options -Indexes
