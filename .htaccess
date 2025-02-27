@@ -23,4 +23,4 @@ ErrorDocument 404 /doconnect/404.php
 Options -Indexes
 
 # Test Rewrite Rule
-RewriteRule ^test-rewrite$ test.html [L]
+RewriteRule ^test-rewrite$ test.php [L]
