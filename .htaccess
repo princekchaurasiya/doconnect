@@ -21,3 +21,6 @@ ErrorDocument 404 /doconnect/404.php
 
 # Disable Directory Listing for Security
 Options -Indexes
+
+# Test Rewrite Rule
+RewriteRule ^test-rewrite$ test.html [L]
