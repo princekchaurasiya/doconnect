@@ -592,7 +592,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 $slug = htmlspecialchars($location['slug']); // Clean URL-friendly slug
 
                 // Dynamic SEO-friendly URL
-                $locationUrl = "/doconnect/$slug.php"; 
+                $locationUrl = "/$slug.php"; 
 
                 echo '<div class="info">
                         <div class="address mt-3">
