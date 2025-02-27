@@ -1,75 +1,75 @@
 <?php
+include 'db-connect.php'; 
 
-ini_set('log_errors', 1);
-ini_set('error_log', "C:/xampp/htdocs/doconnect/logs.txt");
-date_default_timezone_set('Asia/Kolkata'); // ✅ Set correct timezone
-error_log("Test log entry prince: " . date('Y-m-d H:i:s'));
+// 🔍 Define log file path
+$logFile = "C:/xampp/htdocs/doconnect/logs.txt";
+error_log("🔍 location.php started at " . date('Y-m-d H:i:s') . "\n", 3, $logFile);
 
-
-include 'db-connect.php'; // Ensure this file establishes a proper database connection
-
-// Get location from URL, sanitize input
-$locationSlug = isset($_GET['location']) && !empty($_GET['location']) ? trim($_GET['location']) : null;
-error_log("Testing error logging...", 3, "C:/xampp/htdocs/doconnect/logs.txt");
-
-$city = '';
-$locality = '';
+// Get the location slug from the URL
+// $slug = isset($_GET['slug']) ? trim($_GET['slug']) : null;
+// error_log("🔍 Received slug: " . ($slug ?: 'No slug') . "\n", 3, $logFile);
 
 
-if ($locationSlug !== null && $conn) {  // Ensure database connection exists
-    $stmt = $conn->prepare("SELECT city, locality FROM locations WHERE slug = ?");
+
+// Default variables
+$city = 'Mumbai';
+$locality = 'Malad';
+
+// if (!empty($slug) && $conn) {
+//     error_log("🔎 Checking database for slug: $slug\n", 3, $logFile);
     
-    if ($stmt) {
-        $stmt->bind_param("s", $locationSlug);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $location = $result->fetch_assoc();
+//     $stmt = $conn->prepare("SELECT city, locality FROM locations WHERE slug = ?");
+//     $stmt->bind_param("s", $slug);
+//     $stmt->execute();
+//     $result = $stmt->get_result();
+//     $location = $result->fetch_assoc();
 
-        if ($location) {
-            $city = $location['city'] ?? '';  // Avoid undefined index errors
-            $locality = $location['locality'] ?? '';
-        }
+//     if ($location) {
+//         $city = $location['city'];
+//         $locality = $location['locality'];
+//         error_log("✅ Found location: $city ($locality)\n", 3, $logFile);
+//     } else {
+//         error_log("❌ Location NOT found for slug: $slug\n", 3, $logFile);
+//         header("Location: /doconnect/index.php"); // Redirect to home if slug is invalid
+//         exit();
+//     }
+//     $stmt->close();
+// } else {
+//     error_log("❌ Slug is empty or database connection failed.\n", 3, $logFile);
+// }
 
-        // Close statement
-        $stmt->close();
-    }
-}
-// Fetch all locations from the database
-$locations = [];
-if ($conn) {
-    $query = "SELECT city, locality, slug FROM locations ORDER BY city, locality";
-    $result = $conn->query($query);
-
-    if ($result && $result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $locations[] = $row;
-        }
-    }
-}
-
+// 🛠 **SEO Meta Tags Optimization** 🛠 //
 
 // Default values
-$defaultTitle = "Doconnect | Doctor Home Visit at Your Home";
-$defaultDescription = "Get expert doctors for home visits, providing fast, reliable, and personalized healthcare in the comfort of your home.";
+$defaultTitle = "Doctor Home Visit | Expert Medical Care at Your Home";
+$defaultDescription = "Get expert doctors for home visits, providing fast, reliable, and personalized healthcare in your city.";
 $defaultKeywords = "doctor home visit, home healthcare, medical care at home, home visit doctor";
 
-// Dynamically set title, description, and keywords
-$dynamicCity = !empty($city) ? " in " . htmlspecialchars($city, ENT_QUOTES, 'UTF-8') : "";
-$dynamicLocality = !empty($locality) ? " in " . htmlspecialchars($locality, ENT_QUOTES, 'UTF-8') : "";
-$dynamicTitle = "Doconnect | Doctor Home Visit" . $dynamicCity;
-$dynamicDescription = "Looking for a doctor for a home visit" . $dynamicCity . "? Get personalized healthcare at your doorstep. Our expert doctors provide medical care for elderly, bedridden, and chronic patients.";
-$dynamicKeywords = "doctor home visit" . (!empty($city) ? ", doctor home visit in " . htmlspecialchars($city, ENT_QUOTES, 'UTF-8') : "") . ", home healthcare, doctor on call" . (!empty($city) ? " in " . htmlspecialchars($city, ENT_QUOTES, 'UTF-8') : "") . (!empty($locality) ? ", doctor for home visit in " . htmlspecialchars($locality, ENT_QUOTES, 'UTF-8') : "");
+// **Dynamic Metadata**
+// $city = !empty($city) ? " in " . htmlspecialchars($city, ENT_QUOTES, 'UTF-8') : "";
+// $locality = !empty($locality) ? " in " . htmlspecialchars($locality, ENT_QUOTES, 'UTF-8') : "";
 
-// Use default values if city and locality are empty
-$title = !empty($city) ? $dynamicTitle : $defaultTitle;
-$description = !empty($city) ? $dynamicDescription : $defaultDescription;
-$keywords = !empty($city) ? $dynamicKeywords : $defaultKeywords;
+$title = !empty($locality) ? "Doctor for Home Visit" . $locality : $defaultTitle;
+$description = "Looking for a doctor for a home visit" . $locality . "? Our expert doctors provide fast and reliable healthcare services for elderly, bedridden, and chronic patients.";
+$keywords = "doctor home visit" . ($locality ? ", doctor home visit in " . htmlspecialchars($locality, ENT_QUOTES, 'UTF-8') : "") .
+            ", home healthcare, doctor on call" . ($locality ? " in " . htmlspecialchars($locality, ENT_QUOTES, 'UTF-8') : "") .
+            ($locality ? ", home visit doctor in " . htmlspecialchars($locality, ENT_QUOTES, 'UTF-8') : "");
 
-// Close database connection if opened
-if ($conn) {
-    $conn->close();
-}
+
+            $locations = [];
+            if ($conn) {
+                $query = "SELECT city, locality, slug FROM locations ORDER BY city, locality";
+                $result = $conn->query($query);
+            
+                if ($result && $result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $locations[] = $row;
+                    }
+                }
+            }
+
 ?>
+
 
 
 
@@ -148,17 +148,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container position-relative">
         <div class="row gy-5" data-aos="fade-in">
             <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-start text-start align-self-center">
-                <h2>Expert Doctor for Home Visit<?= !empty($city) ? " in " . htmlspecialchars($city) : "" ?></h2>
+                <h2>Expert Doctor for Home Visit<?= !empty($locality) ? " in " . htmlspecialchars($locality) : "" ?></h2>
                 <p>Fast, reliable, and personalized healthcare at home, including treatments for general, elderly, bedridden, and chronic patients<?= !empty($locality) ? " in " . htmlspecialchars($locality) : "" ?>.</p>
                 <div class="d-flex justify-content-start">
                     <a href="tel:+918424845423" class="mobile-number">
-                        <?= !empty($city) ? "Call Now for Home Visit in " . htmlspecialchars($city) : "Call Now for Home Visit" ?>
+                        <?= !empty($locality) ? "Call Now for Home Visit in " . htmlspecialchars($locality) : "Call Now for Home Visit" ?>
                     </a>
                 </div>
             </div>
             <div class="col-lg-6 order-1 order-lg-2 align-items-center">
                 <img src="assets/img/doctor-33.png" class="img-fluid align-self-center" 
-                     alt="Doctor Home Visit<?= !empty($city) ? ' in ' . htmlspecialchars($city) : '' ?>" 
+                     alt="Doctor Home Visit<?= !empty($locality) ? ' in ' . htmlspecialchars($locality) : '' ?>" 
                      data-aos="zoom-out" data-aos-delay="100">
             </div>
         </div>
@@ -171,7 +171,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="icon"><span class="icon-paramedic"></span></div>
                         <h4 class="title">
                             <a href="tel:+918424845423" class="stretched-link">
-                                Doctor for Home Visit<?= !empty($city) ? " in " . htmlspecialchars($city) : "" ?>
+                                Doctor for Home Visit<?= !empty($locality) ? " in " . htmlspecialchars($locality) : "" ?>
                             </a>
                         </h4>
                         <a href="tel:+918424845423" class="mobile-number px-5 py-4">Call Now</a>
@@ -195,7 +195,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="icon"><span class="icon-stethoscope"></span></div>
                         <h4 class="title">
                             <a href="tel:+918424845423" class="stretched-link">
-                                Personalized Medical Care<?= !empty($city) ? " in " . htmlspecialchars($city) : "" ?>
+                                Personalized Medical Care<?= !empty($locality) ? " in " . htmlspecialchars($locality) : "" ?>
                             </a>
                         </h4>
                         <a href="tel:+918424845423" class="mobile-number">Call Now</a>
@@ -231,12 +231,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container" data-aos="fade-up">
         <div class="section-header">
             <h2>About Us</h2>
-            <p>Welcome to <span class="fw-bold">Doconnect</span>, where we redefine healthcare by bringing it directly to your home<?= !empty($city) ? " in " . htmlspecialchars($city) : "" ?>. Our mission is to provide accessible and quality medical care through our <span class="fw-bold">doctor for home visit</span> services<?= !empty($city) ? " in " . htmlspecialchars($city) : "" ?>. Whether you’re managing chronic illnesses, recovering from surgery, or simply need a routine check-up, our skilled doctors are here to help. With <span class="fw-bold">Doconnect</span>, you can forget long wait times and travel hassles & get the medical attention you need in the comfort of your own home.</p>
+            <p>
+    Welcome to <span class="fw-bold">Doconnect</span>, where we redefine healthcare by bringing it directly to your home<?= !empty($city) ? " in " . htmlspecialchars($city, ENT_QUOTES, 'UTF-8') : "" ?>. 
+    Our mission is to provide accessible and quality medical care through our 
+    <span class="fw-bold">doctor for home visit<?= !empty($locality) ? " in " . htmlspecialchars($locality, ENT_QUOTES, 'UTF-8') : "" ?></span> services<?= !empty($city) ? " in " . htmlspecialchars($city, ENT_QUOTES, 'UTF-8') : "" ?>. 
+    Whether you’re managing chronic illnesses, recovering from surgery, or simply need a routine check-up, our skilled doctors are here to help. 
+    With <span class="fw-bold">Doconnect</span>, you can forget long wait times and travel hassles & get the medical attention you need in the comfort of your own home.
+</p>
+
         </div>
         <div class="row gy-4">
             <div class="col-lg-12 align-self-center">
                 <h3>How Doconnect Works</h3>
-                <p>At <span class="fw-bold">Doconnect</span>, we believe healthcare should be convenient for everyone. Our <span class="fw-bold">doctor on call for home visit</span> service connects you with a highly trained team of doctors<?= !empty($city) ? " in " . htmlspecialchars($city) : "" ?>. Our medical professionals have hospital training, particularly in caring for critically ill patients in the ICU. They specialize in troubleshooting at home, ensuring precise diagnosis in a home setting, which leads to better patient management and treatment outcomes.</p>
+                <p>
+    At <span class="fw-bold">Doconnect</span>, we believe healthcare should be convenient for everyone. 
+    Our <span class="fw-bold">doctor on call for home visit<?= !empty($locality) ? " in " . htmlspecialchars($locality, ENT_QUOTES, 'UTF-8') : "" ?></span> 
+    service connects you with a highly trained team of doctors<?= !empty($city) ? " in " . htmlspecialchars($city, ENT_QUOTES, 'UTF-8') : "" ?>. 
+    Our medical professionals have hospital training, particularly in caring for critically ill patients in the ICU. 
+    They specialize in troubleshooting at home, ensuring precise diagnosis in a home setting, 
+    which leads to better patient management and treatment outcomes.
+</p>
+
                 <p>Our ICU doctors and critical care specialists are dedicated to providing high-level intensive care in the most complex situations. They are equipped to assess and monitor patients’ conditions, order necessary tests for diagnosis, and develop comprehensive treatment plans. With a deep understanding of emergency medicine, our doctors work with you to ensure that nothing is missed, providing life-saving treatments both at home and in coordination with hospital-based teams when required.</p>
                 <p>The process is straightforward: simply call us to schedule an appointment, and we’ll take care of the rest. Our team ensures that you receive the personalized care you deserve without the stress of travel.</p>
                 <p>Our comprehensive services<?= !empty($locality) ? " in " . htmlspecialchars($locality) : "" ?> include:</p>
@@ -301,8 +316,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
          <section id="services" class="services sections-bg">
     <div class="container" data-aos="fade-up">
         <div class="section-header">
-            <h2>Our Services<?= !empty($city) ? ' in ' . htmlspecialchars($city) : '' ?></h2>
-            <p>At Doconnect, we specialize in bringing medical care to the comfort of your home<?= !empty($city) ? ' in ' . htmlspecialchars($city) : '' ?>. Whether you need help with managing chronic conditions, urgent care for high-grade fever, or wound care, our doctors and healthcare professionals are here to provide expert medical services right at your doorstep.</p>
+            <h2>Our Services<?= !empty($locality) ? ' in ' . htmlspecialchars($locality) : '' ?></h2>
+            <p>At Doconnect, we specialize in bringing medical care to the comfort of your home<?= !empty($locality) ? ' in ' . htmlspecialchars($locality) : '' ?>. Whether you need help with managing chronic conditions, urgent care for high-grade fever, or wound care, our doctors and healthcare professionals are here to provide expert medical services right at your doorstep.</p>
         </div>
         <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
             <?php
@@ -378,14 +393,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <div class="icon">
                                 <span class="' . $service["icon"] . ' service-icon"></span>
                             </div>
-                            <h3><strong><em>' . $service["title"] . (!empty($city) ? ' in ' . htmlspecialchars($city) : '') . '</em></strong></h3>
-                            <p>' . $service["description"] . (!empty($city) ? ' in ' . htmlspecialchars($city) : '') . '.</p>
+                            <h3><strong><em>' . $service["title"] . (!empty($locality) ? ' in ' . htmlspecialchars($locality) : '') . '</em></strong></h3>
+                            <p>' . $service["description"] . (!empty($locality) ? ' in ' . htmlspecialchars($locality) : '') . '.</p>
                             <div class="service-para">';
                 foreach ($service["features"] as $feature) {
                     echo '<p><span class="icon-correct service-para-icon"></span> ' . $feature . '</p>';
                 }
                 echo '    </div>
-                            <a href="tel:8424845423" class="mobile-number">' . $service["cta"] . (!empty($city) ? ' in ' . htmlspecialchars($city) : '') . '</a>
+                            <a href="tel:8424845423" class="mobile-number">' . $service["cta"] . (!empty($locality) ? ' in ' . htmlspecialchars($locality) : '') . '</a>
                         </div>
                     </div>';
             }
@@ -467,17 +482,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <?php
                     // Define FAQs dynamically using existing $city and $locality variables
                     $faqs = [
-                        ["question" => "How can I book a home visit for a doctor in $city?", "answer" => "You can easily book a home visit by visiting Doconnect.org and selecting the home visit option for $city. It's a simple process designed for your convenience."],
+                        ["question" => "How can I book a home visit for a doctor in $locality?", "answer" => "You can easily book a home visit by visiting Doconnect.org and selecting the home visit option for $locality. It's a simple process designed for your convenience."],
                         ["question" => "Can I request a nebulisation service at home in $locality?", "answer" => "Yes, we provide nebulisation services in $locality during home visits. Just let us know your requirement when you book your appointment."],
-                        ["question" => "How can I arrange for an injection administration at home in $city?", "answer" => "You can request injection administration by booking a home visit through Doconnect.org. Our trained professionals will be there to assist you in $city."],
+                        ["question" => "How can I arrange for an injection administration at home in $locality?", "answer" => "You can request injection administration by booking a home visit through Doconnect.org. Our trained professionals will be there to assist you in $city."],
                         ["question" => "Do you offer wound care management during home visits in $locality?", "answer" => "Yes, we provide dressing and wound care services in $locality. Just mention your needs when you book the appointment."],
-                        ["question" => "Can I get treatment for severe abdominal pain at home in $city?", "answer" => "Absolutely. Our doctors can assess and provide management for severe abdominal pain during a home visit in $city. Please book an appointment for assistance."],
+                        ["question" => "Can I get treatment for severe abdominal pain at home in $locality?", "answer" => "Absolutely. Our doctors can assess and provide management for severe abdominal pain during a home visit in $locality. Please book an appointment for assistance."],
                         ["question" => "Is relief for shivering available through home visits in $locality?", "answer" => "Yes, we can provide relief for shivering during a home visit in $locality. Our medical team will assess your condition and provide appropriate care."],
-                        ["question" => "Can you provide treatment for high-grade fever at home in $city?", "answer" => "Yes, our doctors are equipped to manage high-grade fever during home visits in $city. Just let us know your symptoms when you book."],
+                        ["question" => "Can you provide treatment for high-grade fever at home in $locality?", "answer" => "Yes, our doctors are equipped to manage high-grade fever during home visits in $locality. Just let us know your symptoms when you book."],
                         ["question" => "Do you offer IV fluid therapy during home visits in $locality?", "answer" => "Yes, we provide IV fluid therapy as part of our home visit services in $locality. Please specify your needs when scheduling an appointment."],
-                        ["question" => "Can small stitches be administered at home in $city?", "answer" => "Yes, we can administer small stitches during a home visit in $city. Just let us know the details when you book your appointment."],
+                        ["question" => "Can small stitches be administered at home in $locality?", "answer" => "Yes, we can administer small stitches during a home visit in $locality. Just let us know the details when you book your appointment."],
                         ["question" => "Can I have a urethral catheterisation done at home in $locality?", "answer" => "Yes, urethral catheterisation can be performed during a home visit in $locality. Our trained staff will handle the procedure with care."],
-                        ["question" => "Is home consultation available in $city?", "answer" => "Yes, you can book a consultation with our doctors at home in $city. Simply visit Doconnect.org to schedule your appointment."]
+                        ["question" => "Is home consultation available in $locality?", "answer" => "Yes, you can book a consultation with our doctors at home in $locality. Simply visit Doconnect.org to schedule your appointment."]
                     ];
 
                     // Loop through FAQs and display dynamically
@@ -522,7 +537,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <p>
                                 <?php
                                 if (!empty($city) && !empty($locality)) {
-                                    echo "We are located in $locality, $city.";
+                                    echo "We are located in various location in $city.";
                                 } elseif (!empty($city)) {
                                     echo "We are located in $city.";
                                 } elseif (!empty($locality)) {
@@ -592,7 +607,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 $slug = htmlspecialchars($location['slug']); // Clean URL-friendly slug
 
                 // Dynamic SEO-friendly URL
-                $locationUrl = "./$slug.php"; 
+                $locationUrl = "/doconnect/$slug.php"; 
 
                 echo '<div class="info">
                         <div class="address mt-3">
@@ -667,7 +682,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <?php
                     // Display city and locality if available
                     if (!empty($city) && !empty($locality)) {
-                        echo "We are serving in $locality, $city";
+                        echo "We are serving in various locations in $city";
                     } elseif (!empty($city)) {
                         echo "We are serving in $city";
                     } elseif (!empty($locality)) {

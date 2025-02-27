@@ -1,0 +1,14 @@
+[28-Feb-2025 00:49:58 Asia/Kolkata] Test log entry prince: 2025-02-28 00:49:58
+[28-Feb-2025 00:49:58 Asia/Kolkata] Database Connected Successfully: 2025-02-28 00:49:58
+Testing error logging...[28-Feb-2025 00:50:38 Asia/Kolkata] Test log entry prince: 2025-02-28 00:50:38
+[28-Feb-2025 00:50:38 Asia/Kolkata] Database Connected Successfully: 2025-02-28 00:50:38
+Testing error logging...[28-Feb-2025 00:50:58 Asia/Kolkata] Test log entry prince: 2025-02-28 00:50:58
+[28-Feb-2025 00:50:58 Asia/Kolkata] Database Connected Successfully: 2025-02-28 00:50:58
+Testing error logging...[28-Feb-2025 00:51:20 Asia/Kolkata] Test log entry prince: 2025-02-28 00:51:20
+[28-Feb-2025 00:51:20 Asia/Kolkata] Database Connected Successfully: 2025-02-28 00:51:20
+Testing error logging...[28-Feb-2025 00:51:24 Asia/Kolkata] Database Connected Successfully: 2025-02-28 00:51:24
+🔍 location.php started at 2025-02-28 00:51:24
+[28-Feb-2025 00:52:53 Asia/Kolkata] Test log entry prince: 2025-02-28 00:52:53
+[28-Feb-2025 00:52:53 Asia/Kolkata] Database Connected Successfully: 2025-02-28 00:52:53
+Testing error logging...[28-Feb-2025 00:52:56 Asia/Kolkata] Database Connected Successfully: 2025-02-28 00:52:56
+🔍 location.php started at 2025-02-28 00:52:56
