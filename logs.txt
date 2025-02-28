@@ -1,0 +1,136 @@
+[28-Feb-2025 11:41:13 Asia/Kolkata] Database Connected Successfully: 2025-02-28 11:41:13
+[28-Feb-2025 11:41:48 Asia/Kolkata] Database Connected Successfully: 2025-02-28 11:41:48
+[28-Feb-2025 11:44:38 Asia/Kolkata] Database Connected Successfully: 2025-02-28 11:44:38
+[28-Feb-2025 11:45:47 Asia/Kolkata] Database Connected Successfully: 2025-02-28 11:45:47
+[28-Feb-2025 11:46:21 Asia/Kolkata] Database Connected Successfully: 2025-02-28 11:46:21
+Session Data: Array
+(
+    [admin_logged_in] => 1
+    [admin_username] => prince
+)
+[28-Feb-2025 11:46:26 Asia/Kolkata] Database Connected Successfully: 2025-02-28 11:46:26
+[28-Feb-2025 11:46:26 Asia/Kolkata] Missing latest post image: C:\xampp\htdocs\doconnect/uploads/1740071133_67b760dde7d6b.jpg
+[28-Feb-2025 11:46:26 Asia/Kolkata] Missing latest post image: C:\xampp\htdocs\doconnect/uploads/1740070945_67b76021da269.jpg
+[28-Feb-2025 11:49:29 Asia/Kolkata] Database Connected Successfully: 2025-02-28 11:49:29
+Session Data: Array
+(
+    [admin_logged_in] => 1
+    [admin_username] => prince
+)
+[28-Feb-2025 11:49:57 Asia/Kolkata] Database Connected Successfully: 2025-02-28 11:49:57
+[28-Feb-2025 11:49:57 Asia/Kolkata] Missing latest post image: C:\xampp\htdocs\doconnect/uploads/1740071133_67b760dde7d6b.jpg
+[28-Feb-2025 11:49:57 Asia/Kolkata] Missing latest post image: C:\xampp\htdocs\doconnect/uploads/1740070945_67b76021da269.jpg
+[28-Feb-2025 11:49:59 Asia/Kolkata] Database Connected Successfully: 2025-02-28 11:49:59
+Session Data: Array
+(
+    [admin_logged_in] => 1
+    [admin_username] => prince
+)
+[28-Feb-2025 11:52:15 Asia/Kolkata] Database Connected Successfully: 2025-02-28 11:52:15
+Session Data: Array
+(
+    [admin_logged_in] => 1
+    [admin_username] => prince
+)
+[28-Feb-2025 11:58:41 Asia/Kolkata] Test log entry prince: 2025-02-28 11:58:41
+[28-Feb-2025 11:58:41 Asia/Kolkata] Database Connected Successfully: 2025-02-28 11:58:41
+Testing error logging...[28-Feb-2025 11:58:45 Asia/Kolkata] Database Connected Successfully: 2025-02-28 11:58:45
+Session Data: Array
+(
+    [admin_logged_in] => 1
+    [admin_username] => prince
+)
+[28-Feb-2025 11:59:03 Asia/Kolkata] Database Connected Successfully: 2025-02-28 11:59:03
+Session Data: Array
+(
+    [admin_logged_in] => 1
+    [admin_username] => prince
+)
+[28-Feb-2025 11:59:06 Asia/Kolkata] Database Connected Successfully: 2025-02-28 11:59:06
+Session Data: Array
+(
+    [admin_logged_in] => 1
+    [admin_username] => prince
+)
+[28-Feb-2025 11:59:11 Asia/Kolkata] Database Connected Successfully: 2025-02-28 11:59:11
+Session Data: Array
+(
+    [admin_logged_in] => 1
+    [admin_username] => prince
+)
+[28-Feb-2025 12:00:46 Asia/Kolkata] Database Connected Successfully: 2025-02-28 12:00:46
+Session Data: Array
+(
+    [admin_logged_in] => 1
+    [admin_username] => prince
+)
+[28-Feb-2025 12:00:49 Asia/Kolkata] Database Connected Successfully: 2025-02-28 12:00:49
+[28-Feb-2025 12:02:28 Asia/Kolkata] Database Connected Successfully: 2025-02-28 12:02:28
+[28-Feb-2025 12:05:12 Asia/Kolkata] Database Connected Successfully: 2025-02-28 12:05:12
+Session Data: Array
+(
+    [admin_logged_in] => 1
+    [admin_username] => prince
+)
+[28-Feb-2025 12:05:13 Asia/Kolkata] Database Connected Successfully: 2025-02-28 12:05:13
+Session Data: Array
+(
+    [admin_logged_in] => 1
+    [admin_username] => prince
+)
+[28-Feb-2025 12:05:17 Asia/Kolkata] Database Connected Successfully: 2025-02-28 12:05:17
+Session Data: Array
+(
+    [admin_logged_in] => 1
+    [admin_username] => prince
+)
+[28-Feb-2025 12:05:24 Asia/Kolkata] Database Connected Successfully: 2025-02-28 12:05:24
+Session Data: Array
+(
+    [admin_logged_in] => 1
+    [admin_username] => prince
+)
+[28-Feb-2025 12:05:27 Asia/Kolkata] Database Connected Successfully: 2025-02-28 12:05:27
+[28-Feb-2025 12:05:27 Asia/Kolkata] Missing latest post image: C:\xampp\htdocs\doconnect/uploads/1740071133_67b760dde7d6b.jpg
+[28-Feb-2025 12:05:27 Asia/Kolkata] Missing latest post image: C:\xampp\htdocs\doconnect/uploads/1740070945_67b76021da269.jpg
+[28-Feb-2025 12:06:44 Asia/Kolkata] Database Connected Successfully: 2025-02-28 12:06:44
+[28-Feb-2025 12:06:44 Asia/Kolkata] Missing latest post image: C:\xampp\htdocs\doconnect/uploads/1740071133_67b760dde7d6b.jpg
+[28-Feb-2025 12:06:44 Asia/Kolkata] Missing latest post image: C:\xampp\htdocs\doconnect/uploads/1740070945_67b76021da269.jpg
+[28-Feb-2025 12:06:45 Asia/Kolkata] Database Connected Successfully: 2025-02-28 12:06:45
+Session Data: Array
+(
+    [admin_logged_in] => 1
+    [admin_username] => prince
+)
+[28-Feb-2025 12:06:50 Asia/Kolkata] Database Connected Successfully: 2025-02-28 12:06:50
+Session Data: Array
+(
+    [admin_logged_in] => 1
+    [admin_username] => prince
+)
+[28-Feb-2025 12:06:52 Asia/Kolkata] Database Connected Successfully: 2025-02-28 12:06:52
+[28-Feb-2025 12:06:52 Asia/Kolkata] Missing latest post image: C:\xampp\htdocs\doconnect/uploads/1740071133_67b760dde7d6b.jpg
+[28-Feb-2025 12:06:52 Asia/Kolkata] Missing latest post image: C:\xampp\htdocs\doconnect/uploads/1740070945_67b76021da269.jpg
+[28-Feb-2025 12:06:53 Asia/Kolkata] Database Connected Successfully: 2025-02-28 12:06:53
+Session Data: Array
+(
+    [admin_logged_in] => 1
+    [admin_username] => prince
+)
+[28-Feb-2025 12:07:13 Asia/Kolkata] Database Connected Successfully: 2025-02-28 12:07:13
+Session Data: Array
+(
+    [admin_logged_in] => 1
+    [admin_username] => prince
+)
+[28-Feb-2025 12:07:49 Asia/Kolkata] Test log entry prince: 2025-02-28 12:07:49
+[28-Feb-2025 12:07:49 Asia/Kolkata] Database Connected Successfully: 2025-02-28 12:07:49
+Testing error logging...[28-Feb-2025 12:08:00 Asia/Kolkata] Database Connected Successfully: 2025-02-28 12:08:00
+[2025-02-28 12:08:00] HTTP_REFERER: None
+[2025-02-28 12:08:00] Session return_url Before Login: /doconnect/add-post.php
+[28-Feb-2025 12:08:09 Asia/Kolkata] Database Connected Successfully: 2025-02-28 12:08:09
+[2025-02-28 12:08:09] HTTP_REFERER: http://localhost/doconnect/login.php?return_url=%2Fdoconnect%2Fadd-post.php
+[2025-02-28 12:08:09] Session return_url Before Login: /doconnect/add-post.php
+[2025-02-28 12:08:10] Login Successful: prince Redirecting to /doconnect/add-post.php
+[28-Feb-2025 12:08:10 Asia/Kolkata] Database Connected Successfully: 2025-02-28 12:08:10
+[28-Feb-2025 12:08:14 Asia/Kolkata] Database Connected Successfully: 2025-02-28 12:08:14

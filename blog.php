@@ -48,9 +48,11 @@ error_log("Session Data: " . print_r($_SESSION, true), 3, __DIR__ . '/logs.txt')
             </div>
             <div class="post-card-content">
                <h3>
+                  <!-- title related link -->
                   <a class="blog-title" href="blog-post.php?slug=<?= htmlspecialchars($row['slug']) ?>">
                   <?= htmlspecialchars($row['title']) ?>
                   </a>
+                  
                </h3>
                <p><?= substr(strip_tags($row['content']), 0, 100) ?>...</p>
                <div class="post-card-info">

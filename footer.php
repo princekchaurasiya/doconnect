@@ -72,6 +72,8 @@ tinymce.init({
     menubar: false,
     license_key: 'tz909ejia2cbsck19u2hyuxplak77h1mtl4fi3etnqd06lg9'
 });
+
+
 </script>
 
 </body>

@@ -1,5 +1,3 @@
-RewriteEngine On
-RewriteBase /doconnect/
 
-# Test Rewrite Rule (test-rewrite → test.php)
-RewriteRule ^test-rewrite$ test.php [L]
+
+
